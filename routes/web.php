@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
 
 Route::get('/', function () {
@@ -11,3 +12,5 @@ Route::get('/', function () {
 Route::resource('categories', CategoryController::class)->names('categories');
 
 Route::resource('providers', ProviderController::class)->names('providers');
+
+Route::resource('products', ProductController::class)->names('products');
