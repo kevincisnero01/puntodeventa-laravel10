@@ -14,3 +14,5 @@ Route::resource('categories', CategoryController::class)->names('categories');
 Route::resource('providers', ProviderController::class)->names('providers');
 
 Route::resource('products', ProductController::class)->names('products');
+
+Route::resource('clients', ProductController::class)->names('clients');
