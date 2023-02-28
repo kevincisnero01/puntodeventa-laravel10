@@ -19,7 +19,7 @@ class PurchaseDetailsFactory extends Factory
     public function definition(): array
     {
         return [
-            'shopping_id' => Purchase::all()->random()->id,
+            'purchase_id' => Purchase::all()->random()->id,
             'product_id' => Product::all()->random()->id,
             'quantity' => fake()->numerify('##'),
             'price' => fake()->randomFloat(2,10,100),

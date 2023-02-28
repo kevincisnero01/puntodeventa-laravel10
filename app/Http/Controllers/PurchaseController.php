@@ -23,7 +23,18 @@ class PurchaseController extends Controller
 
     public function store(StoreRequest $request)
     {
-        Purchase::create($request->all);
+        $purchase = Purchase::create($request->all);
+
+        foreach($request->product_id as $key)
+        {
+            $products = [
+                'product_id' => $request->product_id[$key],
+                'quantity' => $request->quantity[$key],
+                'price' => $request->price[$key],
+            ];
+        }
+        $purchase->purchaseDetails()->createMany($products);
+
         return redirect()->route('admin.purchases.index');
     }
 
