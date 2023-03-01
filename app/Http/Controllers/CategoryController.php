@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::get();
-        return view('admin.category.index');
+        return view('admin.category.index', compact('categories'));
     }
 
     public function create()
