@@ -53,7 +53,15 @@
                     <td>{{ $category->description }}</td>
                     <td style="width: 130px;">
                         <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></a>
-                        <button class="btn btn-sm btn-danger inline-block"><i class="fas fa-eraser"></i></button>
+                        
+                        <form action="{{ route('admin.categories.destroy',$category->id) }}" method="post" 
+                            class="inline" onclick="return confirm('¿Quiere Eliminar el registro?')"
+                        >
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-sm btn-danger inline-block"><i class="fas fa-eraser"></i></button>
+                        </form>
+                        
                     </td>
                 </tr>
                 @endforeach
