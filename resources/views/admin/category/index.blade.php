@@ -52,7 +52,7 @@
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
                     <td style="width: 130px;">
-                        <button class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></button>
+                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></a>
                         <button class="btn btn-sm btn-danger inline-block"><i class="fas fa-eraser"></i></button>
                     </td>
                 </tr>
