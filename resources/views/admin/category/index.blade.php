@@ -3,6 +3,15 @@
 @section('content')
 
 <div class="content-wrapper">
+    @if(session('info'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Mensje:</strong> {{ session('info')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     <div class="page-header">
     <h3 class="page-title">
         Categorias
@@ -21,7 +30,7 @@
                 <h4 class="card-title">Listado de Categorias</h4>
             </div>
             <div class="col-6 text-right">
-                <a href="{{ route('categories.create') }}" class="btn btn-sm btn-primary"> Crear Categoria </a>
+                <a href="{{ route('admin.categories.create') }}" class="btn btn-sm btn-primary"> Crear Categoria </a>
             </div>
         </div>
         <div class="row">

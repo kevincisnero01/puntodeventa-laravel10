@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title','Laravel')</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="melody/vendors/iconfonts/font-awesome/css/all.min.css">
-    <link rel="stylesheet" href="melody/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="melody/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="/melody/vendors/iconfonts/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="/melody/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/melody/vendors/css/vendor.bundle.addons.css">
     <!-- main:css -->
-    <link rel="stylesheet" href="melody/css/style.css">
+    <link rel="stylesheet" href="/melody/css/style.css">
 
     @yield('css')
 </head>
@@ -46,20 +46,20 @@
     </div>
 
     <!-- plugins:js -->
-    <script src="melody/vendors/js/vendor.bundle.base.js"></script>
-    <script src="melody/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="/melody/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/melody/vendors/js/vendor.bundle.addons.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page-->
     <!-- End plugin js for this page-->
     <!-- inject:js -->
-    <script src="melody/js/off-canvas.js"></script>
-    <script src="melody/js/hoverable-collapse.js"></script>
-    <script src="melody/js/misc.js"></script>
-    <script src="melody/js/settings.js"></script>
-    <script src="melody/js/todolist.js"></script>
+    <script src="/melody/js/off-canvas.js"></script>
+    <script src="/melody/js/hoverable-collapse.js"></script>
+    <script src="/melody/js/misc.js"></script>
+    <script src="/melody/js/settings.js"></script>
+    <script src="/melody/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="melody/js/dashboard.js"></script>
+    <script src="/melody/js/dashboard.js"></script>
     <!-- End custom js for this page-->
     @yield('scripts')
 </body>

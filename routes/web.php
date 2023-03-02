@@ -10,7 +10,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('categories', CategoryController::class)->names('categories');
+Route::resource('categories', CategoryController::class)->names('admin.categories');
 
 Route::resource('providers', ProviderController::class)->names('providers');
 
