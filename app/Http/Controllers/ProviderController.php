@@ -44,6 +44,6 @@ class ProviderController extends Controller
     public function destroy(Provider $provider)
     {
         $provider->delete();
-        return redirect()->route('admin.providers.index');
+        return redirect()->route('admin.providers.index')->with('info','Eliminazación con exito');
     }
 }
