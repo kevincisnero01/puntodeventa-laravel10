@@ -53,15 +53,21 @@
                     <td>{{ $provider->name }}</td>
                     <td>{{ $provider->email }}</td>
                     <td>{{ $provider->address }}</td>
-                    <td style="width: 130px;">
-                        <a href="{{ route('admin.providers.edit', $provider->id) }}" class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></a>
+                    <td style="width: 200px;">
+
+                        <a href="{{ route('admin.providers.show', $provider->id) }}" class="btn btn-sm btn-success inline-block mr-1" title="Ver Proveedor">
+                            <i class="fas fa-search"></i>
+                        </a>
+
+                        <a href="{{ route('admin.providers.edit', $provider->id) }}" class="btn btn-sm btn-info inline-block mr-1" title="Editar Proveedor">
+                            <i class="fas fa-pen"></i>
+                        </a>
                         
                         <form action="{{ route('admin.providers.destroy',$provider->id) }}" method="post" 
                             onclick="return confirm('¿Quiere Eliminar el registro?')" class="inline" style="display: inline;">
                             @csrf
                             @method('delete')
-
-                            <button type="submit" class="btn btn-sm btn-danger inline-block"><i class="fas fa-eraser"></i></button>
+                            <button type="submit" class="btn btn-sm btn-danger inline-block" title="Eliminar Proveedor"><i class="fas fa-eraser"></i></button>
                         </form>
                         
                     </td>
