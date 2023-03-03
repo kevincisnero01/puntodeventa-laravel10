@@ -36,9 +36,9 @@ class ProviderController extends Controller
     }
 
     public function update(UpdateRequest $request, Provider $provider)
-    {
-        $provider->update($request->all);
-        return redirect()->route('admin.providers.index');
+    {   
+        $provider->update($request->all());
+        return redirect()->route('admin.providers.index')->with('info','Actualización con exito');
     }
 
     public function destroy(Provider $provider)
