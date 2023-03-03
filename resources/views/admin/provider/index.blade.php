@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Categoria')
+@section('title','Proveedor')
 @section('content')
 
 <div class="content-wrapper">
@@ -14,12 +14,12 @@
 
     <div class="page-header">
     <h3 class="page-title">
-        Categorias
+        Proveedores
     </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
         <li class="breadcrumb-item">Admin<a href="#"></a></li>
-        <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+        <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
         </ol>
     </nav>
     </div>
@@ -27,10 +27,10 @@
     <div class="card-body">
         <div class="row">
             <div class="col-6">
-                <h4 class="card-title">Listado de Categorias</h4>
+                <h4 class="card-title">Listado de Proveedores</h4>
             </div>
             <div class="col-6 text-right">
-                <a href="{{ route('admin.categories.create') }}" class="btn btn-sm btn-primary"> Crear Categoria </a>
+                <a href="{{ route('admin.providers.create') }}" class="btn btn-sm btn-primary"> Crear Proveedor </a>
             </div>
         </div>
         <div class="row">
@@ -41,23 +41,26 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    <th>Descripción</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
                     <th>Opciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($categories as $category)
+                @foreach($providers as $provider)
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
-                    <td>{{ $category->description }}</td>
+                    <td>{{ $provider->id }}</td>
+                    <td>{{ $provider->name }}</td>
+                    <td>{{ $provider->email }}</td>
+                    <td>{{ $provider->address }}</td>
                     <td style="width: 130px;">
-                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></a>
+                        <a href="{{ route('admin.providers.edit', $provider->id) }}" class="btn btn-sm btn-info inline-block mr-1"><i class="fas fa-pen"></i></a>
                         
-                        <form action="{{ route('admin.categories.destroy',$category->id) }}" method="post" 
+                        <form action="{{ route('admin.providers.destroy',$provider->id) }}" method="post" 
                             onclick="return confirm('¿Quiere Eliminar el registro?')" class="inline" style="display: inline;">
                             @csrf
                             @method('delete')
+
                             <button type="submit" class="btn btn-sm btn-danger inline-block"><i class="fas fa-eraser"></i></button>
                         </form>
                         

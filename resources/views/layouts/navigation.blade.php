@@ -8,7 +8,7 @@
             </div>
             <div class="profile-name">
             <p class="name">
-                Welcome Mai
+                Welcome Gabriel
             </p>
             <p class="designation">
                 Super Admin
@@ -17,17 +17,22 @@
         </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/">
-            <i class="fa fa-home menu-icon"></i>
-            <span class="menu-title">Dashboard</span>
-        </a>
+            <a class="nav-link" href="/">
+                <i class="fa fa-home menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.categories.index') }}">
-            <i class="fas fa-th menu-icon"></i>
-            <span class="menu-title">Categoria</span>
-        </a>
+            <a class="nav-link" href="{{ route('admin.categories.index') }}">
+                <i class="fas fa-th menu-icon"></i>
+                <span class="menu-title">Categorias</span>
+            </a>
         </li>
-        <li class="nav-item">           
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.providers.index') }}">
+                <i class="fas fa-truck  menu-icon"></i>
+                <span class="menu-title">Proveedores</span>
+            </a>
+        </li> 
     </ul>
 </nav>

@@ -11,7 +11,7 @@ class ProviderController extends Controller
     public function index()
     {
         $providers = Provider::get();
-        return view('admin.provider.index');
+        return view('admin.provider.index', compact('providers'));
     }
 
     public function create()

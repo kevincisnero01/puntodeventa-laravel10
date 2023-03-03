@@ -12,7 +12,7 @@ Route::get('/', function () {
 
 Route::resource('categories', CategoryController::class)->names('admin.categories');
 
-Route::resource('providers', ProviderController::class)->names('providers');
+Route::resource('providers', ProviderController::class)->names('admin.providers');
 
 Route::resource('products', ProductController::class)->names('products');
 
