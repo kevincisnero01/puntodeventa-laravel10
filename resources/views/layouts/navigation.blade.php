@@ -30,8 +30,14 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.providers.index') }}">
-                <i class="fas fa-truck  menu-icon"></i>
+                <i class="fas fa-truck menu-icon"></i>
                 <span class="menu-title">Proveedores</span>
+            </a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.products.index') }}">
+                <i class="fas fa-cubes menu-icon"></i>
+                <span class="menu-title">Productos</span>
             </a>
         </li> 
     </ul>

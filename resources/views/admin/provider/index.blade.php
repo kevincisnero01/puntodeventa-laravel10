@@ -83,3 +83,7 @@
 </div>
 
 @endsection
+
+@section('scripts')
+    <script src="/melody/js/data-table.js"></script>
+@endsection

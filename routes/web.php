@@ -14,7 +14,7 @@ Route::resource('categories', CategoryController::class)->names('admin.categorie
 
 Route::resource('providers', ProviderController::class)->names('admin.providers');
 
-Route::resource('products', ProductController::class)->names('products');
+Route::resource('products', ProductController::class)->names('admin.products');
 
 Route::resource('clients', ProductController::class)->names('clients');
 
