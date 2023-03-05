@@ -58,15 +58,15 @@
                     <td class="text-uppercase">{{ $product->category->name }}</td>
                     <td style="width: 200px;">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-success" title="Ver Producto">
+                            <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-success py-2" title="Ver Producto">
                                 <i class="fas fa-search"></i>
                             </a>
 
-                            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-info" title="Editar Producto">
+                            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-info py-2" title="Editar Producto">
                                 <i class="fas fa-pen"></i>
                             </a>
 
-                            <button type="submit" form="formDelete" class="btn btn-danger rounded-right" title="Eliminar Producto">
+                            <button type="submit" form="formDelete" class="btn btn-danger rounded-right py-2" title="Eliminar Producto">
                                 <i class="fas fa-eraser"></i>
                             </button>
 
