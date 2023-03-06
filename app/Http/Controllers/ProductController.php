@@ -25,10 +25,24 @@ class ProductController extends Controller
         return view('admin.product.create', compact('categories','providers'));
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {   
-        Product::create($request->all);
-        return redirect()->route('admin.products.index');
+        //SAVE IMAGE
+        if($request->hasFile('image'))
+        {
+            $filename =  time().'.'.$request->image->guessExtension();
+            $request->image->storeAs('/products', $filename,'image');
+        }
+        //GENERATE CODE
+        $last_product = Product::latest('id')->first();
+        $code = $last_product->id + 1;
+        //SAVE PRODUCT
+        $product = Product::create($request->all()+[
+            'code' => $code,
+            'image' => $filename,
+        ]);
+
+        return redirect()->route('admin.products.index')->with('info','Producto registrado con exito.');
     }
 
     public function show(Product $product)

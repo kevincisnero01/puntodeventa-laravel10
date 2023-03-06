@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('stock')->default(0);
             $table->string('image');
             $table->decimal('sell_price');
-            $table->enum('status',['ACTIVE','DESACTIVATE']);
+            $table->enum('status',['ACTIVE','DESACTIVATE'])->default('ACTIVE');
             $table->foreignId('category_id')->constrained();
             $table->foreignId('provider_id')->constrained();
 

@@ -28,7 +28,7 @@
         <p class="card-description">
             Registre un nuevo producto.
         </p>
-        {!! Form::open(['route' => 'admin.products.store']) !!}
+        {!! Form::open(['route' => 'admin.products.store','files' => true]) !!}
         
             <div class="form-group">
                 {!! Form::label('name','Nombre') !!}
@@ -57,9 +57,13 @@
             <div class="card">
             <div class="card-body">
                 {!! Form::label('image','Imagen') !!}
-                <input type="file" name="image" id="image" class="dropify"  />
+                <input type="file" name="image" id="image" class="dropify" 
+                    @isset($product->image) data-default-file="/images/product.png" @endisset  
+                />
+                @error('image') <div class="form-group label text-danger mt-2">{{ $message}}</div>@enderror
             </div>
             </div>
+            
             
             {!! Form::submit('Registrar', ['class' => 'btn btn-lg btn-block btn-primary mr-2']) !!}
 
