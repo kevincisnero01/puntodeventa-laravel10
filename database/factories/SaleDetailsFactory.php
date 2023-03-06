@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+use App\Models\Sale;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class SaleDetailsFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'sale_id' => Sale::all()->random()->id,
+            'product_id' => Product::all()->random()->id,
+            'quantity' => fake()->numerify('##'),
+            'price' => fake()->randomFloat(2,10,100)
         ];
     }
 }
