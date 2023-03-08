@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Producto | Crear')
+@section('title','Producto | Mostrar')
 @section('content')
 
 <div class="content-wrapper">
@@ -8,13 +8,13 @@
 <div class="col-8" >
     <div class="page-header">
         <h3 class="page-title">
-            Crear Producto
+            Mostrar Producto
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.products.index') }}">Productos</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Crear</li>
+            <li class="breadcrumb-item active" aria-current="page">Mostrar</li>
             </ol>
         </nav>
     </div>
@@ -26,14 +26,10 @@
     <div class="card">
         <div class="card-body">
         <p class="card-description">
-            Registre un nuevo producto.
+            Detalles del producto.
         </p>
-        {!! Form::open(['route' => 'admin.products.store','files' => true]) !!}
-        
+        {!! Form::model($product) !!}
             @include('admin.product._form')
-
-            {!! Form::submit('Registrar', ['class' => 'btn btn-lg btn-block btn-primary mt-2']) !!}
-
         {!! Form::close() !!}
         </div>
     </div>

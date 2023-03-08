@@ -21,8 +21,8 @@ class ProductController extends Controller
     {
         $categories = Category::pluck('name','id');
         $providers = Provider::pluck('name','id');
-
-        return view('admin.product.create', compact('categories','providers'));
+        $disabled = '';
+        return view('admin.product.create', compact('categories','providers','disabled'));
     }
 
     public function store(StoreRequest $request)
@@ -46,8 +46,11 @@ class ProductController extends Controller
     }
 
     public function show(Product $product)
-    {
-        return view('admin.product.show', compact('product'));
+    {   
+        $categories = Category::pluck('name','id');
+        $providers = Provider::pluck('name','id');
+        $disabled = 'disabled';
+        return view('admin.product.show', compact('product','categories','providers','disabled'));
     }
 
     public function edit(Product $product)
