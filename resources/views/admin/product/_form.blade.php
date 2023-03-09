@@ -27,7 +27,7 @@
 
     {!! Form::label('image','Imagen') !!}
     <input type="file" name="image" id="image" class="dropify" {{ $disabled }}
-        @isset($product->image) data-default-file="/images/{{$product->image}}" @endisset  
+        @isset($product->image) data-default-file="{{$product->image_url}}" @endisset  
     />
     @error('image') <div class="form-group label text-danger mt-2">{{ $message}}</div>@enderror
 </div>
