@@ -27,20 +27,20 @@ class ProductController extends Controller
 
     public function store(StoreRequest $request)
     {   
+        //GET DATA
+        $data = $request->all();
+
         //SAVE IMAGE
-        if($request->hasFile('image'))
-        {
-            $filename =  time().'.'.$request->image->guessExtension();
-            $request->image->storeAs('/products', $filename,'image');
+        if($request->hasFile('image'))        {
+            $data['image'] = $request->image->store('/','images');
         }
+
         //GENERATE CODE
-        $last_product = Product::latest('id')->first();
-        $code = $last_product->id + 1;
-        //SAVE PRODUCT
-        $product = Product::create($request->all()+[
-            'code' => $code,
-            'image' => $filename,
-        ]);
+        $lastest_product = Product::latest('id')->first();
+        $data['code'] = $lastest_product->id + 1;
+
+        //CREATE PRODUCT
+        $product = Product::create($data);
 
         return redirect()->route('admin.products.index')->with('info','Producto registrado con exito.');
     }
