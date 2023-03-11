@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('name')->unique();
             $table->integer('stock')->default(0);
-            $table->string('image');
-            $table->decimal('sell_price');
+            $table->string('image')->nullable();
+            $table->decimal('sell_price')->nullable();
             $table->enum('status',['ACTIVE','DESACTIVATE'])->default('ACTIVE');
             $table->foreignId('category_id')->constrained();
             $table->foreignId('provider_id')->constrained();

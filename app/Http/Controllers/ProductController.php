@@ -8,6 +8,7 @@ use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Category;
 use App\Models\Provider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -50,18 +51,44 @@ class ProductController extends Controller
         $categories = Category::pluck('name','id');
         $providers = Provider::pluck('name','id');
         $disabled = 'disabled';
+
         return view('admin.product.show', compact('product','categories','providers','disabled'));
     }
 
     public function edit(Product $product)
     {
-        return view('admin.product.edit', compact('product'));
+        $categories = Category::pluck('name','id');
+        $providers = Provider::pluck('name','id');
+        $disabled = '';
+
+        return view('admin.product.edit', compact('product','categories','providers','disabled'));
     }
 
     public function update(UpdateRequest $request, Product $product)
     {
-        $product->update($request->all);
-        return redirect()->route('admin.products.index');
+        //RETRIEVING DATA
+        $data = $request->except('_token','_method');
+        
+        if($request->hasFile('image')){
+            //GET FILENAMES
+            $filename_new = $request->image->getClientOriginalName();
+            $filename_old = $product->image;
+            //IMAGE WAS CHANGE
+            if($filename_new != $filename_old){
+                //DELETE IMAGE OLD
+                if(Storage::disk('images')->exists($filename_old)){
+                    //dd('SI EXISTE');
+                    Storage::disk('images')->delete($filename_old);
+                }
+            }
+            //STORE IMAGE 
+            $data['image'] = $request->image->store('/', 'images');
+            
+        }
+        //UPDATE ALL DATA
+        $product->update($data);
+
+        return redirect()->route('admin.products.edit', $product->id)->with('info','Producto actualizado con exito.');
     }
 
     public function destroy(Product $product)
