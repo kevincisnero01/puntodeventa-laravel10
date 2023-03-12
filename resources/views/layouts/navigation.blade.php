@@ -40,5 +40,13 @@
                 <span class="menu-title">Productos</span>
             </a>
         </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.clients.index') }}">
+                <i class="fas fa fa-id-badge menu-icon"></i>
+                <span class="menu-title">Clientes</span>
+            </a>
+        </li> 
     </ul>
 </nav>
+
+

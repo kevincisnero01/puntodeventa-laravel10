@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProviderController;
 use App\Http\Controllers\PurchaseController;
@@ -16,6 +17,6 @@ Route::resource('providers', ProviderController::class)->names('admin.providers'
 
 Route::resource('products', ProductController::class)->names('admin.products');
 
-Route::resource('clients', ProductController::class)->names('clients');
+Route::resource('clients', ClientController::class)->names('admin.clients');
 
 Route::resource('purchases', PurchaseController::class)->names('purchases');
