@@ -16,13 +16,14 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('admin.client.create');
+        $disabled = '';
+        return view('admin.client.create', compact('disabled'));
     }
 
     public function store(StoreRequest $request)
     {
-        Client::create($request->all);
-        return redirect()->route('admin.clients.index');
+        Client::create($request->all());
+        return redirect()->route('admin.clients.index')->with('info','Producto registrado con exito.');
     }
 
     public function show(Client $client)
