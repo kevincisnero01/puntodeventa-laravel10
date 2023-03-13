@@ -15,7 +15,7 @@ class ClientController extends Controller
     }
 
     public function create()
-    {
+    {   
         $disabled = '';
         return view('admin.client.create', compact('disabled'));
     }
@@ -28,7 +28,8 @@ class ClientController extends Controller
 
     public function show(Client $client)
     {
-        return view('admin.client.show', compact('client'));
+        $disabled = 'disabled';
+        return view('admin.client.show', compact('client','disabled'));
     }
 
     public function edit(Client $client)

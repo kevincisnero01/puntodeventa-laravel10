@@ -33,6 +33,6 @@
 
 <div class="form-group">
     <label for="address">Dirección</label>
-    <textarea class="form-control {{ $disabled }}" id="address" name="address" rows="4" placeholder="Ingrese una dirección">{{ old('address') }}</textarea>
+    <textarea class="form-control" {{ $disabled }} id="address" name="address" rows="4" placeholder="Ingrese una dirección">@if($client){{old('address',$client->address)}}@endif</textarea>
     @error('address') <span class="form-group label text-danger mt-2">{{ $message}}</span>@enderror
 </div>
