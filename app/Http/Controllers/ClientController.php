@@ -34,13 +34,14 @@ class ClientController extends Controller
 
     public function edit(Client $client)
     {
-        return view('admin.client.edit', compact('client'));
+        $disabled = '';
+        return view('admin.client.edit', compact('client','disabled'));
     }
 
     public function update(UpdateRequest $request, Client $client)
     {
-        $client->update($request->all);
-        return redirect()->route('admin.clients.index');
+        $client->update($request->all());
+        return redirect()->route('admin.clients.edit', $client->id);
     }
 
     public function destroy(Client $client)
