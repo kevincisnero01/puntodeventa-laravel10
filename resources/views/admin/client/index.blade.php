@@ -58,6 +58,7 @@
 
                     <td style="width: 200px;">
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
                             <a href="{{ route('admin.clients.show', $client->id) }}" class="btn btn-success py-2" title="Ver Cliente">
                                 <i class="fas fa-search"></i>
                             </a>
@@ -66,15 +67,16 @@
                                 <i class="fas fa-pen"></i>
                             </a>
 
-                            <button type="submit" form="formDelete" class="btn btn-danger rounded-right py-2" title="Eliminar Cliente">
-                                <i class="fas fa-eraser"></i>
-                            </button>
-
                             <form id="formDelete" action="{{ route('admin.clients.destroy',$client->id) }}" method="post" 
-                                onclick="return confirm('¿Quiere Eliminar el registro?')" class="inline" style="display: inline;">
+                                onclick="return confirm('¿Quiere Eliminar el registro?')" style="display: inline;">
                                 @csrf
                                 @method('delete')
+                                <button type="submit" class="btn btn-danger py-2 rounded-r" ><i class="fas fa-eraser h-20"  ></i></button>
                             </form>
+
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example"></div>
+                        
+    
                         </div>
                         
                     </td>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/melody/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="/melody/vendors/css/vendor.bundle.addons.css">
     <!-- main:css -->
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/melody/css/style.css">
 
     @yield('css')
