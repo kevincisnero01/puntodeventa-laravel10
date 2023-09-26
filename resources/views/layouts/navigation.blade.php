@@ -46,6 +46,12 @@
                 <span class="menu-title">Clientes</span>
             </a>
         </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.purchases.index') }}">
+                <i class="fas fa-money-bill menu-icon"></i>
+                <span class="menu-title">Compras</span>
+            </a>
+        </li> 
     </ul>
 </nav>
 

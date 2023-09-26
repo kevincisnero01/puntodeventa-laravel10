@@ -21,7 +21,7 @@ class PurchaseFactory extends Factory
         return [
             'provider_id' => Provider::all()->random()->id,
             'user_id' => User::all()->random()->id,
-            'purchase_date' => fake()->date('d-m-Y','now'),
+            'purchase_date' => fake()->date('Y-m-d','now'),
             'tax' => 16,
             'total' => 100.00,
             'status' => fake()->randomElement(['VALID','CANCELLED']),

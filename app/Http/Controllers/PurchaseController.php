@@ -12,7 +12,7 @@ class PurchaseController extends Controller
     public function index()
     {
         $purchases = Purchase::get();
-        return view('admin.purchase.index');
+        return view('admin.purchase.index', compact('purchases'));
     }
 
     public function create()

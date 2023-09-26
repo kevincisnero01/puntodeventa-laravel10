@@ -21,7 +21,7 @@ class SaleFactory extends Factory
         return [
             'client_id' => Client::all()->random()->id,
             'user_id' => User::all()->random()->id,
-            'sale_date' => fake()->date('d-m-Y','now'),
+            'sale_date' => fake()->date('Y-m-d','now'),
             'tax' => 16,
             'total' => 100.00,
             'status' => fake()->randomElement(['VALID','CANCELLED']),

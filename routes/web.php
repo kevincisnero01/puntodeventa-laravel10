@@ -19,4 +19,4 @@ Route::resource('products', ProductController::class)->names('admin.products');
 
 Route::resource('clients', ClientController::class)->names('admin.clients');
 
-Route::resource('purchases', PurchaseController::class)->names('purchases');
+Route::resource('purchases', PurchaseController::class)->names('admin.purchases');
